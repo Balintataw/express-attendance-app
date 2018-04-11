@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My server</title>
+        <link rel="stylesheet" href="/styles/styles.css" />
+    </head>
+    <body>
+        <a href="/accepted"><button>View going</button></a>
+        <a href="/declined"><button>View declined</button></a>
+        <div class="counter-wrapper">
+            <span>Going: {{countAccepted}}</span>
+            <span>Not Going: {{countDeclined}}</span>
+        </div>
+        <div class="container">
+            {{>profile}}
+            <div class="button-wrapper">
+                <form action="/accepting" method="post">
+                    <input type="hidden" name="picture" value={{picture}} />
+                    <input type="hidden" name="name" value={{name}}/>
+                    <input type="hidden" name="phone" value={{cell}}/>
+                    <input type="hidden" name="email" value={{email}}/>
+                    <button type="submit" id="accept-btn">Accept</button>
+                </form>
+                <form action="/declining" method="post">
+                    <input type="hidden" name="picture" value={{picture}} />
+                    <input type="hidden" name="name" value={{name}}/>
+                    <input type="hidden" name="phone" value={{cell}}/>
+                    <input type="hidden" name="email" value={{email}}/>
+                    <button type="submit" id="decline-btn">Decline</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

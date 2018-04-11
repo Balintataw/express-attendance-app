@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>My server</title>
+        <link rel="stylesheet" href="/styles/profile-list-styles.css" />
+    </head>
+    <body>
+        <header>
+            <a href="/"><button>Back</button></a>
+            <span>People Declining</span>
+        </header>
+        <div class="container">
+            {{#declined}}
+                {{>profile}}
+            {{/declined}}
+        </div>
+    </body>
+</html>
